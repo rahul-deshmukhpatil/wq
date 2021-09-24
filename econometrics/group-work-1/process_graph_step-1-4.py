@@ -15,9 +15,10 @@ VOODOO_FTSE_ETF = 'VGK'
 
 # 10 Years treasury data, so filter using START_DATE and END_DATE
 treasury_yield_df_10yr = pd.read_csv(NASDAQ_TREASURY_DATA_CSV_URL, header=0, parse_dates=[0],
-                                infer_datetime_format=True)
+                                     infer_datetime_format=True)
 treasury_yield_df = treasury_yield_df_10yr.loc[START_DATE:END_DATE]
-treasury_yield_df = treasury_yield_df_10yr.loc[(treasury_yield_df_10yr.Date >= START_DATE) & (treasury_yield_df_10yr.Date <=END_DATE)]
+treasury_yield_df = treasury_yield_df_10yr.loc[
+    (treasury_yield_df_10yr.Date >= START_DATE) & (treasury_yield_df_10yr.Date <= END_DATE)]
 treasury_yield_df.set_index('Date')
 
 # Yahoo returns last day of Sept as well, so filter using START_DATE and END_DATE
@@ -33,9 +34,9 @@ ftse_etf_df['Daily_returns'] = ftse_etf_df['Open'] - ftse_etf_df['Close']
 
 
 def calculate_monthly_avg(df, col_name, month):
-    monthly_avg = df[col_name].groupby(
+    monthly_average = df[col_name].groupby(
         df.index.map(lambda x: x.month)).mean()
-    return monthly_avg[month]
+    return monthly_average[month]
 
 
 monthly_avg = gold_etf_df['Close'].groupby(
@@ -61,7 +62,5 @@ calculate_monthly_avg(treasury_yield_df, '10 YR', 11)
 calculate_monthly_avg(treasury_yield_df, '30 YR', 11)
 calculate_monthly_avg(gold_etf_df, 'Close', 11)
 calculate_monthly_avg(ftse_etf_df, 'Close', 11)
-
-
 
 pass
