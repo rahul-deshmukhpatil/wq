@@ -32,6 +32,4 @@ VOODOO_FTSE_ETF = 'VGK'
 
 gold_etf_df = yf.download([SPDR_GOLD_ETF], start=start_date, end=end_date)
 ftse_etf_df = yf.download([VOODOO_FTSE_ETF], start=start_date, end=end_date)
-
-
 pass
