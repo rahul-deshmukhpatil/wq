@@ -1,1 +1,8 @@
+# create new virtual env with name group-work-1 in home dir
+create_venv.sh
+
+# activate the env
+source ~/venv/group-work-1/bin/activate
+
+# convert the python script to the notebook
 jupytext --to notebook process_graph_step-1-4.py
