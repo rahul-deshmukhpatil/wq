@@ -4,3 +4,5 @@ yfinance
 matplotlib
 pyqt5
 jupytext
+nelson_siegel_svensson
+arch
