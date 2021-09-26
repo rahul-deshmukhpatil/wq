@@ -6,3 +6,5 @@ pyqt5
 jupytext
 nelson_siegel_svensson
 arch
+numpy
+scipy
