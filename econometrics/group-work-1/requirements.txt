@@ -8,3 +8,5 @@ nelson_siegel_svensson
 arch
 numpy
 scipy
+pmdarima
+
